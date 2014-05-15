@@ -1,2 +1,0 @@
-class RantController < ApplicationController
-end
