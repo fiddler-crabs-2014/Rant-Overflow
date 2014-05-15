@@ -1,0 +1,2 @@
+module RantHelper
+end
