@@ -28,7 +28,7 @@ class RantsController < ApplicationController
 
   def edit #get edit page
     @rant = Rant.find(params[:id])
-    unless session[:user_id] == @rant.user.id
+    unless session[:user_id] == @rant.user_id
       redirect_to action: 'show'
     end
   end
