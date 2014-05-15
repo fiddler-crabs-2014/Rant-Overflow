@@ -1,7 +1,7 @@
 require "spec_helper"
-describe "Rants", js: true do
+describe "Response", js: true do
   # let!(:rant) { Rant.new(title: "hi", body: "RANTING", responses: [Response.new(body: "comments comments")]) }
-  describe "A user" do
+  describe "User can view responses of a rant" do
     it "should show comment" do
       rant = Rant.create(title: "hi", body: "RANTING", responses: [Response.create(body: "comments comments")])
       visit rant_path(rant)
