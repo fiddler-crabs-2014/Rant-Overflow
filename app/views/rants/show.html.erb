@@ -1,16 +1,17 @@
 <h1><%= @rant.title %></h1>
-<%= link_to "Edit this rant", edit_rant_path(@rant) %>
-<%= link_to 'Delete rant', rant_path(@rant),
-            :confirm => 'Are you sure?', :method => :delete %>
+<% if @rant.user_id == session[:user_id] %>
+  <%= link_to "Edit this rant", edit_rant_path(@rant) %>
+  <%= link_to 'Delete rant', rant_path(@rant),
+              :confirm => 'Are you sure?', :method => :delete %>
+<% end %>
 <p><%= @rant.created_at %></p>
 <p><%= @rant.body %></p>
   <% if @rant.updated_at != @rant.created_at %>
     <p><%= @rant.updated_at %></p>
   <% end %>
-<% if @responses %>
-  <% @responses.each do |response| %>
-    <p><%= response.body %> | <%= response.user.email %></p>
-  <% end %>
-<% end %>
+
+
+  <%= render partial: "responses/response", collection: @responses %>
+
 
 
