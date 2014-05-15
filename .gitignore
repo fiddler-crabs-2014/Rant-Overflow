@@ -15,5 +15,5 @@
 /log/*.log
 /tmp
 
-# ignore DS_Store
-rants/.DS_Store
+# Ignore DS_Store
+/app/views/rants/.DS_Store
