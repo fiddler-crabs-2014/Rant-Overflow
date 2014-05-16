@@ -20,6 +20,7 @@ class RantsController < ApplicationController
       @rant.user = User.find(session[:user_id])
     end
     if @rant.save
+      @response = Response.new
       render :show
     else
       @errors = @rant.errors.full_messages

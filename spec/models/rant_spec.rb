@@ -13,8 +13,8 @@ describe Rant do
 
   it "should save a rant to the database" do
     my_rant = Rant.create(title: 'Title', body: 'This is the body of the rant')
-    my_rant.title should eq 'Title'
-    my_rant.body should eq 'This is the body of the rant'
+    my_rant.title.should eq 'Title'
+    my_rant.body.should eq 'This is the body of the rant'
   end
 
   it "default view count should = 0" do
