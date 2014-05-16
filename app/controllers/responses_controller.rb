@@ -4,6 +4,8 @@ class ResponsesController < ApplicationController
     @response = @rant.responses.build(response_param)
     if @response.save
       redirect_to rant_url(@rant)
+    else
+      render text: "Response body cannot be blank"
     end
   end
 
