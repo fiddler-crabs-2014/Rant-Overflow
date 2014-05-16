@@ -8,11 +8,10 @@ Rails.application.routes.draw do
   #=============================================
   # User Custom Routes
   get 'sign-up', to: 'users#new'
-  get 'login', to: 'users#login'
-  post 'login', to: 'users#do_login'
-  get 'logout', to: 'users#logout'
+  get 'login', to: 'sessions#new'
+  get 'logout', to: 'sessions#destroy'
   get 'profile', to: 'users#profile', as: 'user_profile'
-
+  resources :sessions, only: [:new, :create, :destroy]
   # /User
   #---------------------------------------------
 
