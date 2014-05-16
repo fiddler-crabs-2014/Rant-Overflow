@@ -24,8 +24,10 @@
 
       </ul>
     </nav>
-
-<%= yield %>
+  <% if !flash.empty? %>
+    <%= render 'shared/flash_partial' %>
+  <% end %>
+  <%= yield %>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 require "spec_helper"
 
 describe Rant do
+  let(:rant){ create :rant }
   context "Attibutes" do
     it { should respond_to :title }
     it { should respond_to :body }
@@ -12,14 +13,13 @@ describe Rant do
   end
 
   it "should save a rant to the database" do
-    my_rant = Rant.create(title: 'Title', body: 'This is the body of the rant')
-    my_rant.title should eq 'Title'
-    my_rant.body should eq 'This is the body of the rant'
+    #my_rant = Rant.create(title: 'Title', body: 'This is the body of the rant')
+    rant.save
+    Rant.last.should eq rant
   end
 
   it "default view count should = 0" do
-    my_rant = Rant.new
-    my_rant.view_count.should eq 0
+    rant.view_count.should eq 0
   end
 
   it "should have a user associated with a rant"
