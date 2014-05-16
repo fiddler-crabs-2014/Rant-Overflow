@@ -7,6 +7,7 @@ class RantsController < ApplicationController
   def show #get particular rant
     @rant = Rant.find(params[:id])
     @responses = @rant.responses
+    @response = @rant.responses.build
   end
 
   def new #get page to create new rant

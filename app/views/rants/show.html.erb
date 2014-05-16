@@ -7,17 +7,11 @@
   <% if @rant.updated_at != @rant.created_at %>
     <p><%= @rant.updated_at %></p>
   <% end %>
-<% if @responses %>
-  <% @responses.each do |response| %>
-    <p><%= response.body %> | <%= response.user.email %></p>
-  <% end %>
-<% end %>
 
-<%= form_for @resopnse do |f| %>
-<%= form_for @todo do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
-  <%= f.submit "Respond" %>
-<% end %>
+  <%= render partial: "responses/response", collection: @responses %>
 
+<div class="response-form">
+  <div class="errors"></div>
+  <%= render 'responses/form', rant: @rant, response: @response %>
+</div>
 
