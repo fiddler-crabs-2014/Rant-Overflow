@@ -5,7 +5,7 @@ class ResponsesController < ApplicationController
     if @response.save
       redirect_to rant_url(@rant)
     else
-      render text: "Response body cannot be blank"
+      render text: "Response body cannot be blank", :status => :unprocessable_entity
     end
   end
 
