@@ -28,7 +28,23 @@ describe Response do
         expect(page).to have_content "Response body cannot be blank"
       end
     end
-
   end
 
+  describe "User can edit a response" do
+    context "with valid body" do
+      it "should update the response with new body" do
+        visit rant_path(rant)
+        click_on "Edit Response"
+        fill_in "Body", with: "New Body"
+        click_on "Submit"
+        expect(page).to have_content "New Body"
+      end
+    end
+
+    context "with invalid body" do
+      it "should show the original body" do
+        pending
+      end
+    end
+  end
 end
