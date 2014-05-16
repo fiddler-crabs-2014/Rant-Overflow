@@ -14,4 +14,11 @@
   <%= render partial: "responses/response", collection: @responses %>
 
 
+<%= form_for @resopnse do |f| %>
+<%= form_for @todo do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+  <%= f.submit "Respond" %>
+<% end %>
+
 
