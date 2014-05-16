@@ -24,4 +24,17 @@ describe "Sessions" do
     end
   end
 
+  describe "log out" do
+    context "a signed in user" do
+      it "should be able to log out" do
+        visit new_session_path
+        fill_in "Email", with: user.email
+        fill_in "Password", with: user.password
+        click_button "Sign In"
+        click_on "Sign Out"
+        expect(page).to have_content "Signed out :("
+      end
+    end
+  end
+
 end

@@ -1,5 +1,5 @@
 require "spec_helper"
-require 'debugger'
+
 describe Rant do
   let(:rant){ create :rant }
   context "Attibutes" do
