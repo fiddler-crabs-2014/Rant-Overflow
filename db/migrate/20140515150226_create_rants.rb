@@ -3,7 +3,7 @@ class CreateRants < ActiveRecord::Migration
     create_table :rants do |t|
       t.string :title, :required => true
       t.string :body, :required => true
-      t.integer :view_count
+      t.integer :view_count, default: 0
       t.belongs_to :user
       t.timestamps
     end
