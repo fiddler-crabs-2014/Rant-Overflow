@@ -1,9 +1,5 @@
 require "spec_helper"
 
-<<<<<<< HEAD
-describe User do
-
-=======
 describe "User", js: true do
   #let!(:user) { create :user }
   describe "A user can create an account" do
@@ -38,5 +34,4 @@ describe "User", js: true do
     #   end
     # end
   end
->>>>>>> 6b16e59531aeb06cdf680deeafcf81afb1013b28
 end
