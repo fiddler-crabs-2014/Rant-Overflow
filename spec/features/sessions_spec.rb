@@ -6,10 +6,7 @@ describe "Sessions" do
   describe "log in" do
     context "with a valid name and a password" do
       it "should be able to start a new session at log in" do
-        visit new_session_path
-        fill_in "Email", with: user.email
-        fill_in "Password", with: user.password
-        click_button "Sign In"
+        sign_in_user
         expect(page).to have_content "Sign in successful!"
       end
     end
@@ -27,10 +24,7 @@ describe "Sessions" do
   describe "log out" do
     context "a signed in user" do
       it "should be able to log out" do
-        visit new_session_path
-        fill_in "Email", with: user.email
-        fill_in "Password", with: user.password
-        click_button "Sign In"
+        sign_in_user
         click_on "Sign Out"
         expect(page).to have_content "Signed out :("
       end
