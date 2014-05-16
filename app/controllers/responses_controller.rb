@@ -4,8 +4,6 @@ class ResponsesController < ApplicationController
     @response = @rant.responses.build(response_param)
     if @response.save
       redirect_to rant_url(@rant)
-    else
-      404
     end
   end
 
