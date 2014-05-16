@@ -9,10 +9,11 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
+
   config.include CapybaraHelpers
 
-  config.use_transactional_fixtures = false #transaction - any talking to DB
-  # set to true when fucking up
+  config.use_transactional_fixtures = false
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
   end
