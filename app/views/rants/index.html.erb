@@ -1,6 +1,6 @@
-<a href="/rants/new">Create a rant!</a>
-
-<% @rants.each do |rant| %>
-  <h1><%= link_to rant.title, rant %></h1>
-  <p><%= rant.body %></p>
-<% end %>
+<div class="set_width">
+  <% @rants.each do |rant| %>
+    <h1><%= link_to rant.title, rant %></h1>
+    <p><%= rant.body %></p>
+  <% end %>
+</div>

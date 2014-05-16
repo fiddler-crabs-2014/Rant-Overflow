@@ -1,5 +1,8 @@
-<%= form_for @rant do |f| %>
-  <%= f.text_field :title, value: @rant.title %>
-  <%= f.text_field :body, value: @rant.body %>
-  <%= f.submit %>
-<% end %>
+<div class="centered">
+  <div class="centered_content">
+    <%= form_for @rant do |f| %>
+    <%= f.text_field :title, value: @rant.title %>
+    <%= f.text_field :body, value: @rant.body %>
+    <%= f.submit %>
+  <% end %>
+</div>

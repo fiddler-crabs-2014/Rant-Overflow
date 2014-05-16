@@ -1,11 +1,19 @@
 require "spec_helper"
-describe "Response", js: true do
-  # let!(:rant) { Rant.new(title: "hi", body: "RANTING", responses: [Response.new(body: "comments comments")]) }
-  describe "User can view responses of a rant" do
+require "debugger"
+
+describe "Rant", js: true do
+  #let!(:user) { User.create(email: "adam@gmail.com", password: "kidfjs")}
+  #let!(:rant) { Rant.create(title: "hi", body: "RANTING", user: user) }
+  describe "User can view all the rants" do
     it "should show comment" do
-      rant = Rant.create(title: "hi", body: "RANTING", responses: [Response.create(body: "comments comments")])
-      visit rant_path(rant)
+      user = User.create(email: "adam@gmail.com", password: "kidfjs")
+      rant = Rant.create(title: "hi", body: "RANTING", user: user)
+      rant.responses << Response.create(body: "comments comments")
+
+
+      visit rant_path(rant)#'/rants/' + rant.id.to_s
       expect(page).to have_content "comments comments"
     end
   end
 end
+

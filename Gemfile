@@ -34,9 +34,11 @@ group :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'simplecov', '~> 0.7.1'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
+  gem 'debugger'
 end
 
 # Use ActiveModel has_secure_password

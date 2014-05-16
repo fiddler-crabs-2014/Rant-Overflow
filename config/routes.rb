@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => 'rants#index'
   resources :users
   resources :rants do
     resources :responses
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
 
   #=============================================
   # Rant Custom Routes
-  
+
   # /Rant
   #---------------------------------------------
 

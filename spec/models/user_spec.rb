@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe User do
-  context "User Attributes" do 
+  context "User Attributes" do
     it { should respond_to :email }
     it { should respond_to :password }
     it { should respond_to :rants }
