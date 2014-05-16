@@ -1,2 +1,2 @@
-class ResponseController < ApplicationController
+class ResponsesController < ApplicationController
 end
