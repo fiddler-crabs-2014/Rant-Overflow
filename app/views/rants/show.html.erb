@@ -12,3 +12,7 @@
 
   <%= render partial: "responses/response", collection: @responses %>
 
+  <div class="response-form">
+    <div class="errors"></div>
+    <%= render 'responses/form', rant: @rant, response: @response %>
+  </div>
