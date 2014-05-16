@@ -1,3 +1,18 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+h1.sign_in {
+  margin-top: 2em;
+}
+
+p.notice {
+  margin-top: 60px;
+  color: blue;
+}
+
+p.error {
+  margin-top: 60px;
+  color: blue;
+}
