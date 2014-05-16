@@ -1,7 +1,11 @@
 require "spec_helper"
 
 describe User do
+<<<<<<< HEAD
   context "User Attributes" do 
+=======
+  context "User Attributes" do
+>>>>>>> 6b16e59531aeb06cdf680deeafcf81afb1013b28
     it { should respond_to :email }
     it { should respond_to :password }
     it { should respond_to :rants }
@@ -38,4 +42,8 @@ describe User do
   end
 
 
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 6b16e59531aeb06cdf680deeafcf81afb1013b28

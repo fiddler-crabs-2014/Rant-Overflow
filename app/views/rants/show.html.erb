@@ -1,17 +1,24 @@
-<h1><%= @rant.title %></h1>
-<% if @rant.user_id == session[:user_id] %>
-  <%= link_to "Edit this rant", edit_rant_path(@rant) %>
-  <%= link_to 'Delete rant', rant_path(@rant),
-              :confirm => 'Are you sure?', :method => :delete %>
-<% end %>
-<p><%= @rant.created_at %></p>
-<p><%= @rant.body %></p>
+<div class="set_width">
+  <h1><%= @rant.title %></h1>
+
+  <% if @rant.user_id == session[:user_id] %>
+    <%= link_to "Edit this rant", edit_rant_path(@rant) %>
+    <%= link_to 'Delete rant', rant_path(@rant),
+                :confirm => 'Are you sure?', :method => :delete %>
+  <% end %>
+
+  <p><%= @rant.created_at %></p>
+  <p><%= @rant.body %></p>
+
   <% if @rant.updated_at != @rant.created_at %>
     <p><%= @rant.updated_at %></p>
   <% end %>
 
-
   <%= render partial: "responses/response", collection: @responses %>
 
+  <div class="response-form">
+    <div class="errors"></div>
+    <%= render 'responses/form', rant: @rant, response: @response %>
+  </div>
 
-
+</div>

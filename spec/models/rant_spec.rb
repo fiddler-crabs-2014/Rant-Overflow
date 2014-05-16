@@ -12,9 +12,16 @@ describe Rant do
   end
 
   it "should save a rant to the database" do
+<<<<<<< HEAD
     my_rant = Rant.create(title: 'Title', body: 'This is the body of the rant')
     my_rant.title should eq 'Title'
     my_rant.body should eq 'This is the body of the rant'
+=======
+    my_rant = Rant.new(title: 'Title', body: 'This is the body of the rant')
+    my_rant.save
+    my_rant.title.should eq 'Title'
+    my_rant.body.should eq 'This is the body of the rant'
+>>>>>>> 6b16e59531aeb06cdf680deeafcf81afb1013b28
   end
 
   it "default view count should = 0" do
@@ -26,4 +33,8 @@ describe Rant do
 
   it "should require a user to create a rant"
 
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 6b16e59531aeb06cdf680deeafcf81afb1013b28

@@ -7,6 +7,7 @@ class RantsController < ApplicationController
   def show #get particular rant
     @rant = Rant.find(params[:id])
     @responses = @rant.responses
+    @response = @rant.responses.build
   end
 
   def new #get page to create new rant
@@ -28,7 +29,7 @@ class RantsController < ApplicationController
 
   def edit #get edit page
     @rant = Rant.find(params[:id])
-    unless session[:user_id] == @rant.user.id
+    unless session[:user_id] == @rant.user_id
       redirect_to action: 'show'
     end
   end
