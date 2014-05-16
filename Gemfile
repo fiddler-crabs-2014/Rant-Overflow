@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
@@ -36,9 +36,11 @@ group :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'simplecov', '~> 0.7.1'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
+  gem 'debugger'
 end
 
 # Use ActiveModel has_secure_password
