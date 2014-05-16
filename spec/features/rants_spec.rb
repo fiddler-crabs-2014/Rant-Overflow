@@ -15,5 +15,16 @@ describe "Rant", js: true do
       expect(page).to have_content "comments comments"
     end
   end
+
+  describe "User can create a rant" do
+  end
+
+  describe "User can see rants" do
+    describe "when user is not logged in" do
+    end
+
+    describe "when user is logged in" do
+    end
+  end
 end
 
