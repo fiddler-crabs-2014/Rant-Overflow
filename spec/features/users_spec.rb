@@ -16,7 +16,7 @@ describe "User", js: true do
         fill_in "Password", :with => "Something"
         fill_in "Password confirm", :with => "Something"
         click_on "Create User"
-        expect(page).to have_content "Listing users"
+        expect(page).to have_content "sadface@keaty.com"
       end
       it "creates a user" do
         visit root_path
