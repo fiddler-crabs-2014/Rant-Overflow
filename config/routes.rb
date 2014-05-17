@@ -12,11 +12,15 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
   get 'profile', to: 'users#profile', as: 'user_profile'
   resources :sessions, only: [:new, :create, :destroy]
+
   # /User
   #---------------------------------------------
 
   #=============================================
   # Rant Custom Routes
+
+  post 'rants/up_vote', to: 'rants#up_vote'
+  post 'rants/down_vote', to: 'rants#down_vote'
 
   # /Rant
   #---------------------------------------------

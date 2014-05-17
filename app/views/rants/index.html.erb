@@ -1,6 +1,13 @@
 <div class="set_width">
+
+  <% first_rant = @rants.shift %>
+  <div class="vote_count"><%= first_rant.vote_count %></div>
+  <h1 class="rant_title"><%= link_to first_rant.title, first_rant %></h1>
+  <p><%= first_rant.body %></p>
+
   <% @rants.each do |rant| %>
-    <h1><%= link_to rant.title, rant %></h1>
-    <p><%= rant.body %></p>
+    <div class="vote_count"><%= rant.vote_count %></div>
+    <h1 class="rant_title"><%= link_to rant.title, rant %></h1>
   <% end %>
+
 </div>
