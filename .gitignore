@@ -17,3 +17,6 @@
 
 # Ignore DS_Store
 /app/views/rants/.DS_Store
+
+#Ignore Coverage gem results
+/coverage

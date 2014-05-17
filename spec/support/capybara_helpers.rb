@@ -4,6 +4,14 @@ module CapybaraHelpers
       raise AjaxStillWorking unless page.evaluate_script('jQuery.active == 0')
     end
   end
+
+  def sign_in_user
+    visit new_session_path
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Sign In"
+  end
+
 end
 
 
