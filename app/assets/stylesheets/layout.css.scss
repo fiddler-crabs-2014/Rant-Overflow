@@ -1,8 +1,13 @@
 html, body {
   height: 100%;
   width: 100%;
-  color: #34495e;
+  color: #222;
   font-family: 'Lato', sans-serif;
+}
+
+nav, .button {
+  background-color: #222;
+  color:#fff;
 }
 
 nav {
@@ -12,7 +17,6 @@ nav {
   top: 0px;
   left: 0px;
   font-weight: bold;
-  background-color: #3498db;
   z-index: 10;
 
   .logo, .logo a {
@@ -85,3 +89,32 @@ nav {
   margin-right: auto;
 }
 
+.vote {
+  display: block;
+  width: 100%;
+  height: 55px;
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  border-radius: 3px;
+  float: left;
+  margin-right: 10px;
+  padding: 10px 20px;
+}
+
+.vote_count {
+  float: left;
+  font-size: 30px;
+  margin-right: 20px;
+
+}
+
+.rant_title {
+  color: #222;
+  a {
+    color: #222;
+    text-decoration: none;
+  }
+}

@@ -1,7 +1,7 @@
 class RantsController < ApplicationController
 
   def index #get all rants
-    @rants = Rant.all
+    @rants = Rant.all.to_a.sort_by(&:vote_count).reverse
   end
 
   def show #get particular rant
@@ -41,6 +41,24 @@ class RantsController < ApplicationController
 
     rant.save
     redirect_to action: 'show'
+  end
+
+  def up_vote
+    up_rant = Rant.find(params[:id])
+    p "vote count:" + up_rant.vote_count.to_s
+    up_rant.vote_count += 1
+    up_rant.save
+    p "vote count:" + up_rant.vote_count.to_s
+    redirect_to "/rants/#{params[:id]}"
+  end
+
+  def down_vote
+    down_rant = Rant.find(params[:id])
+    p "vote count:" + down_rant.vote_count.to_s
+    down_rant.vote_count -= 1
+    down_rant.save
+    p "vote count:" + down_rant.vote_count.to_s
+    redirect_to "/rants/#{params[:id]}"
   end
 
   def destroy #delete goes to index
