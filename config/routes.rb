@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   #=============================================
   # Response Custom Routes
 
+  post 'responses/up_vote', to: 'responses#up_vote'
+  post 'responses/down_vote', to: 'responses#down_vote'
 
   # /Response
   #---------------------------------------------

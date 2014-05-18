@@ -20,6 +20,18 @@ class ResponsesController < ApplicationController
     end
   end
 
+  def up_vote
+    @response.vote_count += 1
+    @response.save
+    redirect_to rant_path(@rant)
+  end
+
+  def down_vote
+    @response.vote_count -= 1
+    @response.save
+    redirect_to rant_path(@rant)
+  end
+
   private
   def response_param
     params.require(:response).permit!
