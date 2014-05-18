@@ -1,1 +1,20 @@
-<p><%= response.body %></p>
+<p>
+    <%= response.body %>
+    <%= link_to "edit", edit_rant_response_path(id: response.id, rant_id: response.rant_id) %>
+</p>
+
+<div class="vote">
+    <%= form_tag('/responses/up_vote') do %>
+      <%= hidden_field_tag 'id', response.id %>
+      <%= hidden_field_tag 'rant_id', response.rant_id %>
+      <%= submit_tag 'Up Vote', class: 'upvote' %>
+    <% end %>
+
+    <span class="vote-count-response"><%= response.vote_count %></span>
+
+    <%= form_tag('/responses/down_vote') do %>
+      <%= hidden_field_tag 'id', response.id %>
+      <%= hidden_field_tag 'rant_id', response.rant_id %>
+      <%= submit_tag 'Down Vote', class: 'downvote' %>
+    <% end %>
+</div>
