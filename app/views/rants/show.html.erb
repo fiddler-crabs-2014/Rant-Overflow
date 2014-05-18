@@ -1,3 +1,5 @@
+
+
 <div class="set_width">
   <h1 class="rant_title"><%= @rant.title %></h1>
   <hr>
@@ -6,12 +8,12 @@
 
     <div class="vote_count"><%= @rant.vote_count %></div>
 
-    <%= form_tag('/rants/up_vote') do %>
+    <%= form_tag '/rants/up_vote', :id => 'upvote' do %>
       <%= hidden_field_tag 'id', @rant.id %>
       <%= submit_tag 'Up Vote', class: 'button' %>
     <% end %>
 
-    <%= form_tag('/rants/down_vote') do %>
+    <%= form_tag '/rants/down_vote', :id => 'downvote' do %>
       <%= hidden_field_tag 'id', @rant.id %>
       <%= submit_tag 'Down Vote', class: 'button' %>
     <% end %>
