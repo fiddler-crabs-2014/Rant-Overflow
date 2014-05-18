@@ -34,9 +34,9 @@ describe Response do
     context "with valid body" do
       it "should update the response with new body" do
         visit rant_path(rant)
-        click_on "Edit Response"
+        click_on "edit"
         fill_in "Body", with: "New Body"
-        click_on "Submit"
+        click_on "Respond"
         expect(page).to have_content "New Body"
       end
     end
@@ -47,4 +47,13 @@ describe Response do
       end
     end
   end
+
+  describe "User can vote a response" do
+    it "should update vote_count for the response" do
+      visit rant_path(rant)
+      find(".upvote").click
+      expect(page).to have_content "1"
+    end
+  end
+
 end
