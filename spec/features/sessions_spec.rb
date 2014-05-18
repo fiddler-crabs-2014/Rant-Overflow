@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe "Sessions" do
+  let!(:rantone){ create :rant }
+  let!(:ranttwo){ create :rant }
   let(:user){ create :user }
 
   describe "log in" do

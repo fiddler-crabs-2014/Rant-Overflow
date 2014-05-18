@@ -1,6 +1,7 @@
 <div class="set_width">
 
   <% first_rant = @rants.shift %>
+
   <div class="vote_count"><%= first_rant.vote_count %></div>
   <h1 class="rant_title"><%= link_to first_rant.title, first_rant %></h1>
   <p><%= first_rant.body %></p>

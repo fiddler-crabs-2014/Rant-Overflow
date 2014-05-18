@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.authenticate(params[:session][:email], params[:session][:password])
+
     if user
       sign_in(user)
       flash[:notice] = "Sign in successful!"

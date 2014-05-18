@@ -45,20 +45,26 @@ class RantsController < ApplicationController
 
   def up_vote
     up_rant = Rant.find(params[:id])
-    p "vote count:" + up_rant.vote_count.to_s
     up_rant.vote_count += 1
-    up_rant.save
-    p "vote count:" + up_rant.vote_count.to_s
-    redirect_to "/rants/#{params[:id]}"
+
+    if up_rant.save
+      respond_to do |format|
+        format.html
+        format.json { render :json => { vote_count: up_rant.vote_count }}
+      end
+    end
   end
 
   def down_vote
     down_rant = Rant.find(params[:id])
-    p "vote count:" + down_rant.vote_count.to_s
     down_rant.vote_count -= 1
-    down_rant.save
-    p "vote count:" + down_rant.vote_count.to_s
-    redirect_to "/rants/#{params[:id]}"
+
+    if down_rant.save
+      respond_to do |format|
+        format.html
+        format.json { render :json => { vote_count: down_rant.vote_count }}
+      end
+    end
   end
 
   def destroy #delete goes to index
