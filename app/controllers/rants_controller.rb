@@ -6,7 +6,7 @@ class RantsController < ApplicationController
 
   def show #get particular rant
     @rant = Rant.find(params[:id])
-    @responses = @rant.responses
+    @responses = @rant.responses[0..-1]
     @response = @rant.responses.build
   end
 

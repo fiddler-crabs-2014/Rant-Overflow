@@ -1,5 +1,6 @@
 class ResponsesController < ApplicationController
   before_filter :load_rant
+
   def create
     @response = @rant.responses.build(response_param)
     if @response.save
@@ -10,6 +11,7 @@ class ResponsesController < ApplicationController
   end
 
   def edit
+    @response = Response.find(params[:id])
     render "form", response: response
   end
 
