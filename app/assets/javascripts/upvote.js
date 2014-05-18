@@ -1,8 +1,9 @@
-$(document).ready(function () {
+$(document).on('ready page:load', function () {
+  console.log('document ready')
   $('#upvote').on('submit', function(event) {
     event.preventDefault();
     var vote_info = $( this ).serialize();
-
+    console.log('binded to submit');
     $.ajax({
       url: '/rants/up_vote',
       type: 'post',
