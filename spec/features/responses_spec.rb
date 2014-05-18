@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 require "spec_helper"
 describe Response do
   let!(:response) { Response.create(body: "content content")}
@@ -33,17 +32,3 @@ describe Response do
   end
 
 end
-=======
-# require "spec_helper"
-
-# describe "Rants", js: true do
-#   let!(:rant) { Rant.new(title: "hi", body: "RANTING", responses: [Response.new(body: "comments comments")]) }
-#   describe "A user" do
-#     it "should show comment" do
-#       rant = Rant.create(title: "hi", body: "RANTING", responses: [Response.create(body: "comments comments")])
-#       visit rant_path(rant)
-#       expect(page).to have_content "comments comments"
-#     end
-#   end
-# end
->>>>>>> 03278895afba8df6981416144f099f88755e5f8b
