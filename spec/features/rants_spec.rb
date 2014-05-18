@@ -1,10 +1,4 @@
 require "spec_helper"
-<<<<<<< HEAD
-describe Response do
-  let!(:rant) { Rant.create(title: "hi", body: "RANTING", responses: [Response.create(body: "comments comments")]) }
-  describe "User can view responses of a rant" do
-    it "should show comment" do
-=======
 require "debugger"
 
 describe "Rant", js: true do
@@ -20,7 +14,6 @@ describe "Rant", js: true do
     end
 
     it "on the individual rant pages" do
->>>>>>> 03278895afba8df6981416144f099f88755e5f8b
       visit rant_path(rant)
       expect(page).to have_content "RANTING"
     end
