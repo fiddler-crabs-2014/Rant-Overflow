@@ -2,23 +2,32 @@
 <html>
 <head>
   <title>RantOverflow</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <nav>
-
-      <div class=""><a href="/">Rant Overflow</a></div>
-
+    <div class="logo"><a href="/">Rant Overflow</a></div>
       <ul>
         <li><a href="/rants">See All Rants</a></li>
-        <li><a href="/rants/new">Create a Rant</a></li>
+
+        <% if current_user %>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/rants/new">Create a Rant</a></li>
+          <li><a href="/logout">Sign Out</a></li>
+        <% else %>
+          <li><a href="/login">Sign In</a></li>
+          <li><a href="/sign-up">Sign Up</a></li>
+        <% end %>
+
       </ul>
-
     </nav>
-
-<%= yield %>
+  <% if !flash.empty? %>
+    <%= render 'shared/flash_partial' %>
+  <% end %>
+  <%= yield %>
 
 </body>
 </html>

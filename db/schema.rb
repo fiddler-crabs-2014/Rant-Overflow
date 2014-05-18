@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 20140515150231) do
 
   create_table "rants", force: true do |t|
     t.string   "title"
-    t.string   "body"
-    t.integer  "view_count"
+    t.string   "body",       limit: 1000
+    t.integer  "view_count",              default: 0
+    t.integer  "vote_count",              default: 0
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => 'rants#index'
   resources :users
   resources :rants do
     resources :responses
@@ -7,17 +8,20 @@ Rails.application.routes.draw do
   #=============================================
   # User Custom Routes
   get 'sign-up', to: 'users#new'
-  get 'login', to: 'users#login'
-  post 'login', to: 'users#do_login'
-  get 'logout', to: 'users#logout'
+  get 'login', to: 'sessions#new'
+  get 'logout', to: 'sessions#destroy'
   get 'profile', to: 'users#profile', as: 'user_profile'
+  resources :sessions, only: [:new, :create, :destroy]
 
   # /User
   #---------------------------------------------
 
   #=============================================
   # Rant Custom Routes
-  
+
+  post 'rants/up_vote', to: 'rants#up_vote'
+  post 'rants/down_vote', to: 'rants#down_vote'
+
   # /Rant
   #---------------------------------------------
 
