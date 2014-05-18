@@ -1,5 +1,5 @@
 class ResponsesController < ApplicationController
-  before_filter :load_rant
+  before_filter :load_rant, :load_response
 
   def create
     @response = @rant.responses.build(response_param)
@@ -11,8 +11,7 @@ class ResponsesController < ApplicationController
   end
 
   def edit
-    @response = Response.find(params[:id])
-    render "form", response: response
+    render :partial => 'form', :locals => { rant: @rant, response: @response }
   end
 
   def update
@@ -28,5 +27,9 @@ class ResponsesController < ApplicationController
 
   def load_rant
     @rant = Rant.find(params[:rant_id])
+  end
+
+  def load_response
+    @response = Response.find(params[:id])
   end
 end
