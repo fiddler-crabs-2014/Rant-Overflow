@@ -52,8 +52,7 @@ describe "Rant", js: true do
       visit new_rant_path
       fill_in "Title", :with => ""
       fill_in "Body", :with => ""
-      find_button('Create Rant').click
-      expect( Rant.count ).to_not change
+      expect { find_button('Create Rant').click }.to change {Rant.count}.by(0)
     end
   end
 end
