@@ -1,5 +1,4 @@
 <%= form_for [@rant, @response] do |f| %>
-  <%= f.label :body %>
   <%= f.text_field :body %>
-  <%= f.submit "Respond" %>
+  <%= f.submit "Respond", class: 'button' %>
 <% end %>

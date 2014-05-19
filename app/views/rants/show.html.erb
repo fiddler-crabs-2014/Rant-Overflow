@@ -1,42 +1,42 @@
-
-
 <div class="set_width">
+  <p><%= @rant.created_at.to_formatted_s(:long_ordinal) %></p>
   <h1 class="rant_title"><%= @rant.title %></h1>
+  <% if @rant.user_id == session[:user_id] %>
+      <%= link_to "Edit this rant", edit_rant_path(@rant) %>
+      <%= link_to 'Delete rant', rant_path(@rant),
+                  :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>
   <hr>
 
   <div class="vote">
 
-    <div class="vote_count"><%= @rant.vote_count %></div>
+    <div class="vote_count left"><%= @rant.vote_count %></div>
 
     <%= form_tag '/rants/up_vote', :id => 'upvote' do %>
       <%= hidden_field_tag 'id', @rant.id %>
-      <%= submit_tag 'Up Vote', class: 'button' %>
+      <%= submit_tag 'Up Vote', class: 'button left' %>
     <% end %>
 
     <%= form_tag '/rants/down_vote', :id => 'downvote' do %>
       <%= hidden_field_tag 'id', @rant.id %>
-      <%= submit_tag 'Down Vote', class: 'button' %>
+      <%= submit_tag 'Down Vote', class: 'button left' %>
     <% end %>
 
   </div>
 
 
-  <% if @rant.user_id == session[:user_id] %>
-    <%= link_to "Edit this rant", edit_rant_path(@rant) %>
-    <%= link_to 'Delete rant', rant_path(@rant),
-                :confirm => 'Are you sure?', :method => :delete %>
-  <% end %>
+
+
 
 
   <p><%= @rant.body %></p>
-  <p><%= @rant.created_at.to_formatted_s(:long_ordinal) %></p>
 
   <%= render partial: "responses/response", collection: @responses %>
 
-  <% if true %>
+  <% if current_user %>
     <div class="response-form">
       <div class="errors"></div>
-      <%= render partial: 'responses/form' %>
+      <%= render 'responses/form', rant: @rant, response: @response %>
     </div>
   <% end %>
 

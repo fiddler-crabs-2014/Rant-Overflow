@@ -2,12 +2,24 @@ html, body {
   padding-left: 10px;
   height: 100%;
   width: 100%;
-  color: #222;
+  color: #333;
   font-family: 'Lato', sans-serif;
 }
 
+a:link {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:visited { color: #2980b9; }
+
+a:hover {
+  color: #34495e;
+}
+
 nav, .button {
-  background-color: #222;
+  background-color: #333;
   color:#fff;
 }
 
@@ -100,22 +112,35 @@ nav {
   display: inline-block;
   border: none;
   border-radius: 3px;
-  float: left;
-  margin-right: 10px;
-  padding: 10px 20px;
+  margin-top: 4px;
+  margin-right: 11px;
+  padding: 5px 20px 7px;
+}
+
+.button:hover {
+  background-color: #2980b9;
 }
 
 .vote_count {
-  float: left;
   font-size: 30px;
   margin-right: 20px;
-
 }
 
 .rant_title {
-  color: #222;
+  color: #2980b9;
+  margin-top: 0;
   a {
-    color: #222;
+    color: #2980b9;
     text-decoration: none;
   }
+}
+
+.col_2 {
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+}
+
+.left {
+  float: left;
 }

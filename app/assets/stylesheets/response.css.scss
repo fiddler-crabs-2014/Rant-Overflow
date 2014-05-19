@@ -2,27 +2,4 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.response_body {
-  background-color: green;
-}
 
-.vote {
-  display: relative;
-}
-
-.vote > form, .vote-count-response {
-  float: left;
-  margin: 0 5px;
-}
-
-.upvote, .downvote {
-  font-size: 0.8em;
-}
-
-.upvote {
-  background-color: #F46D29;
-}
-
-.downvote {
-  background-color: #9394FE;
-}

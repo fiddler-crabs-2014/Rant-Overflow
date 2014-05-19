@@ -8,7 +8,7 @@
 jared = User.create(email: "jared@gmail.com", password: "jared")
 phil = User.create(email: "phil@gmail.com", password: "phil")
 
-50.times do |i|
+10.times do |i|
 @user_ids = [1, 2]
   @rant = Rant.create(title: "I am post: #{i}", body: "I am body: #{i}", user_id: @user_ids.sample, view_count: 0)
   10.times do |i|

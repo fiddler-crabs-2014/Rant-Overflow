@@ -1,8 +1,10 @@
 class ResponsesController < ApplicationController
-  before_filter :load_rant, :load_response
+  before_filter :load_rant
+  before_filter :load_response, only: [:edit, :update]
 
   def create
     @response = @rant.responses.build(response_param)
+    @response.user_id = session[:user_id]
     if @response.save
       redirect_to rant_url(@rant)
     else
@@ -21,12 +23,14 @@ class ResponsesController < ApplicationController
   end
 
   def up_vote
+    @response = Response.find(params[:id])
     @response.vote_count += 1
     @response.save
     redirect_to rant_path(@rant)
   end
 
   def down_vote
+    @response = Response.find(params[:id])
     @response.vote_count -= 1
     @response.save
     redirect_to rant_path(@rant)

@@ -2,13 +2,14 @@
 
   <% first_rant = @rants.shift %>
 
-  <div class="vote_count"><%= first_rant.vote_count %></div>
-  <h1 class="rant_title"><%= link_to first_rant.title, rant_path(first_rant) %></h1>
+  <h1 class="rant_title"><span class="vote_count"><%= first_rant.vote_count %></span>
+  <%= link_to first_rant.title, rant_path(first_rant) %></h1>
   <p><%= first_rant.body %></p>
 
-  <% @rants.each do |rant| %>
-    <div class="vote_count"><%= rant.vote_count %></div>
-    <h1 class="rant_title"><%= link_to rant.title, rant_path(rant) %></h1>
-  <% end %>
+  <div class="col_2">
+    <% @rants.each do |rant| %>
+      <h1 class="rant_title"><span class="vote_count"><%= rant.vote_count %></span><%= link_to rant.title, rant_path(rant) %></h1>
+    <% end %>
+  </div>
 
 </div>
