@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 describe SessionsController do
   let(:user) {create :user}
 

@@ -1,6 +1,6 @@
 class ResponsesController < ApplicationController
   before_filter :load_rant
-  before_filter :load_response, only: [:edit, :update]
+  #before_filter :load_response, only: [:edit, :update]
 
   def create
     @response = @rant.responses.build(response_param)
@@ -13,13 +13,14 @@ class ResponsesController < ApplicationController
   end
 
   def edit
+    @response = Response.find(params[:id])
     render :partial => 'form', :locals => { rant: @rant, response: @response }
   end
 
   def update
-    if @response.update_attributes(response_param)
-      redirect_to rant_url(@rant)
-    end
+    @response = Response.find(params[:id])
+    redirect_to rant_url(@rant) if @response.update_attributes(response_param)
+    # handle error
   end
 
   def up_vote
@@ -45,7 +46,7 @@ class ResponsesController < ApplicationController
     @rant = Rant.find(params[:rant_id])
   end
 
-  def load_response
-    @response = Response.find(params[:id])
-  end
+  #def load_response
+    #@response = Response.find(params[:id])
+  #end
 end

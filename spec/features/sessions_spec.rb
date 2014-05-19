@@ -12,6 +12,7 @@ describe "Sessions" do
         expect(page).to have_content "Sign in successful!"
       end
     end
+
     context "with an invalid name and/or password" do
       it "should not be able to start a new session" do
         visit new_session_path
@@ -32,5 +33,4 @@ describe "Sessions" do
       end
     end
   end
-
 end

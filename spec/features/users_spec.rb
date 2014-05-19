@@ -3,8 +3,8 @@ require "spec_helper"
 describe "User", js: true do
   let!(:rantone) { create :rant }
   let!(:ranttwo) { create :rant }
-  describe "A user can create an account" do
 
+  describe "A user can create an account" do
     context "with valid account information" do
       it "can click on sign-up" do
         visit root_path

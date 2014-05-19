@@ -1,6 +1,7 @@
 <div class="set_width">
   <p><%= @rant.created_at.to_formatted_s(:long_ordinal) %></p>
   <h1 class="rant_title"><%= @rant.title %></h1>
+
   <% if @rant.user_id == session[:user_id] %>
       <%= link_to "Edit this rant", edit_rant_path(@rant) %>
       <%= link_to 'Delete rant', rant_path(@rant),

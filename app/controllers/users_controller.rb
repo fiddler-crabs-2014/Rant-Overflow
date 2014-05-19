@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  # do I need this?
   def index
     @users = User.all
   end
@@ -12,9 +13,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to(:action => 'index')
+      redirect_to :show
     else
-      render('new')
+      render :new
     end
   end
 
@@ -24,16 +25,15 @@ class UsersController < ApplicationController
   end
 
   def edit
-    
     @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to(:action => 'index')
+      redirect_to :index
     else
-      render('edit')
+      render :edit
     end
   end
 
@@ -41,6 +41,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  # move/share with sessions
   def do_login
     @user = User.authenticate(params[:email], params[:password])
 
@@ -53,6 +54,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # what's the diff between profile and show
   def profile
     # if session[:user_id].nil?
     #   @user = nil

@@ -2,7 +2,10 @@ require "spec_helper"
 
 describe Rant do
   let(:rant){ create :rant }
-  context "Attibutes" do
+
+  # test validations
+
+  describe "attibutes" do
     it { should respond_to :title }
     it { should respond_to :body }
     it { should respond_to :view_count }
@@ -13,7 +16,6 @@ describe Rant do
   end
 
   it "should save a rant to the database" do
-
     my_rant = Rant.create(title: 'Title', body: 'This is the body of the rant')
     my_rant.title.should eq 'Title'
     my_rant.body.should eq 'This is the body of the rant'

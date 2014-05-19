@@ -1,4 +1,5 @@
 require "spec_helper"
+
 describe Response do
   let!(:response) { Response.create(body: "content content")}
   let!(:rant) { Rant.create(title: "hi", body: "RANTING", responses: [response]) }

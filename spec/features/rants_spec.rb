@@ -1,12 +1,12 @@
 require "spec_helper"
 require "debugger"
 
-describe "Rant", js: true do
+feature "Rant", js: true do
 
   let(:user) { User.create(email: "adam@gmail.com", password: "kidfjs")}
   let!(:rant) { Rant.create(title: "hi", body: "RANTING", user: user) }
 
-  describe "User can view rants" do
+  scenario "User can view rants" do
 
     it "on the landing page" do
       visit root_path

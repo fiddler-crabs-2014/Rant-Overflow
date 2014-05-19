@@ -1,12 +1,12 @@
 <p>
     <%= response.body %>
-    <% if session[:user_id] == response.user_id %>
+    <% if signed_in? #session[:user_id] == response.user_id %>
       <%= link_to "Edit", edit_rant_response_path(id: response.id, rant_id: response.rant_id) %>
     <% end %>
 </p>
 
 <div class="vote">
-    <%= form_tag('/responses/up_vote') do %>
+    <%= form_tag(response_up_vote_path) do %>
       <%= hidden_field_tag 'id', response.id %>
       <%= hidden_field_tag 'rant_id', response.rant_id %>
       <%= submit_tag 'Up Vote', class: 'button left' %>
