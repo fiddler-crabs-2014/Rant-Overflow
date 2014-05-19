@@ -10,7 +10,7 @@
 
   <div class="vote">
 
-    <div class="vote_count left"><%= @rant.vote_count %></div>
+    <div class="rant_vote_count left"><%= @rant.vote_count %></div>
 
     <%= form_tag '/rants/up_vote', :id => 'upvote' do %>
       <%= hidden_field_tag 'id', @rant.id %>

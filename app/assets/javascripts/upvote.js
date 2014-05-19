@@ -10,7 +10,7 @@ $(document).on('ready page:load', function () {
       data: vote_info,
       dataType: 'json'
     }).success( function(response) {
-      $('.vote_count').html(response.vote_count);
+      $('.rant_vote_count').html(response.vote_count);
     }).fail( function() {
       alert('unable to upvote (sry)');
     });
@@ -26,7 +26,7 @@ $(document).on('ready page:load', function () {
       data: vote_info,
       dataType: 'json'
     }).success( function(response) {
-      $('.vote_count').html(response.vote_count);
+      $('.rant_vote_count').html(response.vote_count);
     }).fail( function() {
       alert('unable to downvote (sry)');
     });
