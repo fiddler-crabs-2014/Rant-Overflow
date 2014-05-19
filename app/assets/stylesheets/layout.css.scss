@@ -101,21 +101,31 @@ nav {
   border: none;
   border-radius: 3px;
   float: left;
-  margin-right: 10px;
-  padding: 10px 20px;
+  margin-top: 4px;
+  margin-right: 11px;
+  padding: 5px 20px 7px;
 }
 
 .vote_count {
-  float: left;
   font-size: 30px;
   margin-right: 20px;
-
 }
 
 .rant_title {
   color: #222;
+  margin-top: 0;
   a {
     color: #222;
     text-decoration: none;
   }
+}
+
+.col_2 {
+  -webkit-column-count:3; /* Chrome, Safari, Opera */
+  -moz-column-count:3; /* Firefox */
+  column-count: 3;
+}
+
+.left {
+  float: left;
 }

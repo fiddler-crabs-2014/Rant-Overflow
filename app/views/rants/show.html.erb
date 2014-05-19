@@ -1,12 +1,10 @@
-
-
 <div class="set_width">
   <h1 class="rant_title"><%= @rant.title %></h1>
   <hr>
 
   <div class="vote">
 
-    <div class="vote_count"><%= @rant.vote_count %></div>
+    <div class="vote_count left"><%= @rant.vote_count %></div>
 
     <%= form_tag '/rants/up_vote', :id => 'upvote' do %>
       <%= hidden_field_tag 'id', @rant.id %>
@@ -33,10 +31,10 @@
 
   <%= render partial: "responses/response", collection: @responses %>
 
-  <% if true %>
+  <% if current_user %>
     <div class="response-form">
       <div class="errors"></div>
-      <%= render partial: 'responses/form' %>
+      <%= render 'responses/form', rant: @rant, response: @response %>
     </div>
   <% end %>
 
